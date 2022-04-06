@@ -11,11 +11,13 @@ public class IF_Bediungung_Aufgabe_2 {
         System.out.println(randomNumber2);
 
         if ((randomNumber1<randomNumber2)&&(randomNumber1<50)) {
-            System.out.println("Zahl 1 ist kleiner als Zahl 2 und Mini");
-        }     else if ((randomNumber1 < 30)||(randomNumber2 < 30)){
+                System.out.println("Zahl 1 ist kleiner als Zahl 2 und Mini");
+        }
+        else if (randomNumber1 < 30||randomNumber2 < 30){
                 System.out.println("Eine der beiden ist kleiner als 30");
-            } else if ((randomNumber1<randomNumber2)&&(randomNumber1<50)){
-                System.out.println("Large");
+            }
+        else if (randomNumber1<50&&randomNumber2!=50){
+                System.out.println("Erste Zahl klein, zweite kein 50iger");
             }
 
         }
