@@ -1,22 +1,32 @@
 public class Quersumme_3 {
     public static void main(String[] args) {
-            int anzahlQuersummen = 0;
-            int temp = 1000;
-            while (0 != temp) {
-                anzahlQuersummen = anzahlQuersummen + 1;
-                temp = temp / 10;
-            }
-            int[] quersummen = new int[anzahlQuersummen * 9];
-            for (int i = 0; i <= 1000; i++) {
-                int num3 = i;
-                int crossnum = 0;
-                while (num3>0){
-                    crossnum += num3%10;
-                    num3 /= 10;
+        int[] crossSumCounter = new int[28];
 
-                }
-                quersummen[crossnum] = quersummen[crossnum] + 1;
+        for (int cnt = 0; cnt < 1000; cnt++) {
+            String numberAsString = Integer.toString(cnt);
+            char[] numbers = numberAsString.toCharArray();
+
+            int sum = 0;
+            for (int i = 0; i < numbers.length; i++) {
+                sum += Character.getNumericValue(numbers[i]);
+
+            }
+            crossSumCounter[sum] += 1;
+        }
+        int maxIndex = 0;
+        int maxValue = 0;
+        for (int i = 0; i < crossSumCounter.length; i++) {
+            if (crossSumCounter[i]>maxValue){
+                maxValue = crossSumCounter[i];
+                maxIndex = i;
             }
 
+        }
+        for (int i = 0; i < crossSumCounter.length; i++) {
+            if (crossSumCounter[i]==maxValue){
+                System.out.println(i + " kommt 75 mal vor" );
+            }
+
+        }
     }
 }
