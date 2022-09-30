@@ -1,106 +1,153 @@
-import java.util.Scanner;
+import java.util.*;
+
 public class TicTacToe {
 
-    public static void main(String [] args){
+    static String[] board;
+    static String turn;
 
+    static String checkWinner()
+    {
+        for (int a = 0; a < 8; a++) {
+            String line = null;
 
-
-        {
-
-            char[][] gameBoard = {
-                    {'_','|','_','|','_'},
-                    {'_','|','_','|','_'},
-                    {' ','|',' ','|',' '}
-            };
-
-            playerMove(gameBoard);
-
-        }
-
-
-    char[][] gameBoard = {
-                {'_','|','_','|','_'},
-                {'_','|','_','|','_'},
-                {' ','|',' ','|',' '}
-        };
-
-        printBoard(gameBoard);
-
-    }
-
-    private static void playerMove(char[][] gameBoard) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please make a move. (1-9)");
-        int move = input.nextInt();
-        updateBoard(move,1,gameBoard);
-    }
-
-    public static void printBoard(char [][] gameBoard){
-
-        for(char[] row : gameBoard){
-            for( char c : row){
-                System.out.print(c);
+            switch (a) {
+                case 0:
+                    line = board[0] + board[1] + board[2];
+                    break;
+                case 1:
+                    line = board[3] + board[4] + board[5];
+                    break;
+                case 2:
+                    line = board[6] + board[7] + board[8];
+                    break;
+                case 3:
+                    line = board[0] + board[3] + board[6];
+                    break;
+                case 4:
+                    line = board[1] + board[4] + board[7];
+                    break;
+                case 5:
+                    line = board[2] + board[5] + board[8];
+                    break;
+                case 6:
+                    line = board[0] + board[4] + board[8];
+                    break;
+                case 7:
+                    line = board[2] + board[4] + board[6];
+                    break;
             }
-            System.out.println();
+
+            if (line.equals("XXX")) {
+                return "X";
+            }
+
+
+            else if (line.equals("OOO")) {
+                return "O";
+            }
         }
+
+        for (int a = 0; a < 9; a++) {
+            if (Arrays.asList(board).contains(
+                    String.valueOf(a + 1))) {
+                break;
+            }
+            else if (a == 8) {
+                return "draw";
+            }
+        }
+
+
+        System.out.println(
+                turn + "'s turn; enter a slot number to place "
+                        + turn + " in:");
+        return null;
     }
 
-    public static void updateBoard(int position, int player, char[][] gameBoard) {
+    static void printBoard()
+    {
+        System.out.println("|---|---|---|");
+        System.out.println("| " + board[0] + " | "
+                + board[1] + " | " + board[2]
+                + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + board[3] + " | "
+                + board[4] + " | " + board[5]
+                + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + board[6] + " | "
+                + board[7] + " | " + board[8]
+                + " |");
+        System.out.println("|---|---|---|");
+    }
 
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        board = new String[9];
+        turn = "X";
+        String winner = null;
 
-
-        char character;
-
-        if (player == 1) {
-            character = 'X';
-        } else {
-            character = 'O';
+        for (int a = 0; a < 9; a++) {
+            board[a] = String.valueOf(a + 1);
         }
 
-        switch (position) {
+        System.out.println("Welcome to 3x3 Tic Tac Toe.");
+        printBoard();
 
-            case 1:
-                gameBoard[0][0] = character;
-                printBoard(gameBoard);
-                break;
-            case 2:
-                gameBoard[0][2] = character;
-                printBoard(gameBoard);
-                break;
-            case 3:
-                gameBoard[0][4] = character;
-                printBoard(gameBoard);
-                break;
-            case 4:
-                gameBoard[1][0] = character;
-                printBoard(gameBoard);
-                break;
-            case 5:
-                gameBoard[1][2] = character;
-                printBoard(gameBoard);
-                break;
-            case 6:
-                gameBoard[1][4] = character;
-                printBoard(gameBoard);
-                break;
-            case 7:
-                gameBoard[2][0] = character;
-                printBoard(gameBoard);
-                break;
-            case 8:
-                gameBoard[2][2] = character;
-                printBoard(gameBoard);
-                break;
-            case 9:
-                gameBoard[2][4] = character;
-                printBoard(gameBoard);
-                break;
+        System.out.println(
+                "X will play first. Enter a  number to place X :");
 
-            default:
-                break;
+        while (winner == null) {
+            int numInput;
 
 
+            try {
+                numInput = in.nextInt();
+                if (!(numInput > 0 && numInput <= 9)) {
+                    System.out.println(
+                            "Invalid input; re-enter slot number:");
+                    continue;
+                }
+            }
+            catch (InputMismatchException e) {
+                System.out.println(
+                        "Invalid input; re-enter slot number:");
+                continue;
+            }
+
+
+            if (board[numInput - 1].equals(
+                    String.valueOf(numInput))) {
+                board[numInput - 1] = turn;
+
+                if (turn.equals("X")) {
+                    turn = "O";
+                }
+                else {
+                    turn = "X";
+                }
+
+                printBoard();
+                winner = checkWinner();
+            }
+            else {
+                System.out.println(
+                        "Slot already taken; re-enter slot number:");
+            }
+        }
+
+
+        if (winner.equalsIgnoreCase("draw")) {
+            System.out.println(
+                    "It's a draw! Thanks for playing.");
+        }
+
+
+        else {
+            System.out.println(
+                    "Congratulations! " + winner
+                            + "'s have won! Thanks for playing.");
         }
     }
 }
-
