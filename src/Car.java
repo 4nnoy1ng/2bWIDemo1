@@ -8,6 +8,12 @@ public class Car {
     public String color;
     public int amountOfRepetitions;
 
+    public Car(int fc, String b, String sn) {
+        this.fuelConsumption = fuelConsumption;
+        this.brand = brand;
+        this.serialNumber = serialNumber;
+    }
+
     public void drive(){
         this.fuelAmount = this.fuelAmount - fuelConsumption;
         System.out.println("I am driving");
@@ -34,9 +40,5 @@ public class Car {
     public void getRemainingRange(){
         int range = (fuelAmount/fuelConsumption)*100;
         System.out.println(range +"km");
-    }
-
-    public void Car(int fuelConsumption, String brand, String serialNumber) {
-
     }
 }

@@ -1,5 +1,7 @@
-public class OO {
+public class Main {
     public static void main(String[] args) {
+
+/*
         Car c1 = new Car();
         c1.brand = "Porsche";
         c1.drive = "Yes";
@@ -20,12 +22,16 @@ public class OO {
         c2.color = "red";
         c2.fuelAmount = 78;
         c2.amountOfRepetitions = 2;
+*/
 
-        Car c3 = new Car()
+        Car c3 = new Car(17,"Opel","ABCD1234!");
+
+
+/*
         c2.drive();
         c1.honk();
         c1.getRemainingRange();
         c2.getRemainingRange();
-
+*/
     }
 }
