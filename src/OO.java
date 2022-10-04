@@ -4,27 +4,28 @@ public class OO {
         c1.brand = "Porsche";
         c1.drive = "Yes";
         c1.brake = "No";
-        c1.fuelConsumption = 7;
+        c1.fuelConsumption = 28;
         c1.serialNumber = "B19942";
         c1.color = "blue";
-        c1.fuelAmount = 80;
+        c1.fuelAmount = 100;
+        c1.amountOfRepetitions = 3;
 
 
         Car c2 = new Car();
         c2.brand = "Lamborgini";
         c2.drive = "Yes";
         c2.brake = "No";
-        c2.fuelConsumption = 10;
+        c2.fuelConsumption = 11;
         c2.serialNumber = "A12345";
         c2.color = "red";
-        c2.fuelAmount = 90;
+        c2.fuelAmount = 78;
+        c2.amountOfRepetitions = 2;
 
-        System.out.println(c1.serialNumber);
-        System.out.println(c2.serialNumber);
-
-        System.out.println(c2.fuelAmount);
+        Car c3 = new Car()
         c2.drive();
-        System.out.println(c2.fuelAmount);
+        c1.honk();
+        c1.getRemainingRange();
+        c2.getRemainingRange();
 
     }
 }
