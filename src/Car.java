@@ -1,11 +1,11 @@
 public class Car {
-    public int fuelConsumption;
-    public int fuelAmount;
-    public String brand;
-    public String drive;
-    public String brake;
-    public String serialNumber;
-    public String color;
+    private int fuelConsumption;
+    private int fuelAmount;
+    private String brand;
+    private String drive;
+    private String brake;
+    private String serialNumber;
+    private String color;
     public int amountOfRepetitions;
 
     public Car(int fc, String b, String sn) {
@@ -40,5 +40,41 @@ public class Car {
     public void getRemainingRange(){
         int range = (fuelAmount/fuelConsumption)*100;
         System.out.println(range +"km");
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setAmountOfRepetitions(int amountOfRepetitions) {
+        this.amountOfRepetitions = amountOfRepetitions;
+    }
+
+    public void setBrake(String brake) {
+        this.brake = brake;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setDrive(String drive) {
+        this.drive = drive;
+    }
+
+    public void setFuelAmount(int fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
     }
 }
