@@ -2,18 +2,19 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Car c1 = new Car();
+        Car c1 = new Car(28,"Porsche","B19942");
         c1.setBrand("Porsche");
         c1.setDrive("Yes");
         c1.setBrake("NO");
         c1.setFuelConsumption(28);
         c1.setSerialNumber("B19942");
-        c1.setColor("blue";
+        c1.setColor("blue");
         c1.setFuelAmount(100);
         c1.amountOfRepetitions = 3;
 
 
-        Car c2 = new Car();
+
+        Car c2 = new Car(11,"Lamborgini","A12345");
         c2.setBrand("Lamborgini");
         c2.setDrive("Yes");
         c2.setBrake("NO");

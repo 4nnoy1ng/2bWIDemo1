@@ -8,8 +8,6 @@ public class Bankomat {
         int balance = 0;
         int amount = 0;
 
-        // variablen englisch, klein und camel
-
         System.out.println("1. Einzahlen");
         System.out.println("2. Abheben");
         System.out.println("3. Kontostand");

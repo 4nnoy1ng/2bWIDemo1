@@ -17,6 +17,22 @@ public class Car {
     public void drive(){
         this.fuelAmount = this.fuelAmount - fuelConsumption;
         System.out.println("I am driving");
+        int speed = 0;
+    }
+
+    public class Engine{
+        private enum TYPE {DIESEL,GAS}
+        private int horsePower;
+        private TYPE type;
+
+        public Engine(int horsePower, TYPE type) {
+            this.horsePower = horsePower;
+            this.type = type;
+        }
+
+        public void drive(int amount){
+            System.out.println("motor is running with " + amount);
+        }
     }
 
     public void bremsen(){
@@ -63,8 +79,42 @@ public class Car {
     }
 
     public void setFuelAmount(int fuelAmount) {
-        this.fuelAmount = fuelAmount;
+        if (fuelAmount>150){
+            this.fuelAmount = 100;
+        } else {
+            this.fuelAmount = fuelAmount;
+        }
+
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public int getAmountOfRepetitions() {
+        return amountOfRepetitions;
+    }
+
+    public String getBrake() {
+        return brake;
+    }
+
+    public String getDrive() {
+        return drive;
+    }
+
 
     public void setFuelConsumption(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
