@@ -1,4 +1,9 @@
-public class Car {
+package at.dan.oo;
+
+    public class Car {
+    private int speed;
+    private Engine engine;
+    private Tires tires;
     private int fuelConsumption;
     private int fuelAmount;
     private String brand;
@@ -8,8 +13,8 @@ public class Car {
     private String color;
     public int amountOfRepetitions;
 
-    public Car(int fc, String b, String sn) {
-        this.fuelConsumption = fuelConsumption;
+    public Car(Engine engine, String b, String sn) {
+        this.engine = engine;
         this.brand = brand;
         this.serialNumber = serialNumber;
     }
@@ -17,23 +22,19 @@ public class Car {
     public void drive(){
         this.fuelAmount = this.fuelAmount - fuelConsumption;
         System.out.println("I am driving");
-        int speed = 0;
-    }
-
-    public class Engine{
-        private enum TYPE {DIESEL,GAS}
-        private int horsePower;
-        private TYPE type;
-
-        public Engine(int horsePower, TYPE type) {
-            this.horsePower = horsePower;
-            this.type = type;
-        }
-
-        public void drive(int amount){
-            System.out.println("motor is running with " + amount);
+        if (this.speed > 100) {
+            System.out.println("Ich fahre schnell");
+        } else {
+            System.out.println("Ich fahre langsam");
         }
     }
+
+    public  void setSpeed(int speed) {
+        this.speed = speed;
+
+
+    }
+
 
     public void bremsen(){
         System.out.println("Ich bremse");
@@ -50,6 +51,7 @@ public class Car {
 
         for (int i = 0; i < this.amountOfRepetitions; i++) {
             System.out.println("Tuuut");
+            System.out.println("ich bin ein " + this.brand + "un habe die Farbe " + this.color + "und habe " + this.getEngine().getHorsePower());
         }
     }
 
@@ -115,7 +117,6 @@ public class Car {
         return drive;
     }
 
-
     public void setFuelConsumption(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
@@ -126,5 +127,13 @@ public class Car {
 
     public String getSerialNumber() {
         return serialNumber;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }

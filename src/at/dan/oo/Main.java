@@ -1,8 +1,10 @@
+package at.dan.oo;
+
 public class Main {
     public static void main(String[] args) {
 
-
-        Car c1 = new Car(28,"Porsche","B19942");
+        Engine e1 = new Engine(140, Engine.TYPE.DIESEL);
+        Car c1 = new Car(e1, "Porsche", "B19942");
         c1.setBrand("Porsche");
         c1.setDrive("Yes");
         c1.setBrake("NO");
@@ -11,10 +13,14 @@ public class Main {
         c1.setColor("blue");
         c1.setFuelAmount(100);
         c1.amountOfRepetitions = 3;
+        c1.setSpeed(60);
+        System.out.println(c1.getEngine().getHorsePower());
+
+        c1.drive();
 
 
 
-        Car c2 = new Car(11,"Lamborgini","A12345");
+        Car c2 = new Car(e1, "Lamborgini", "A12345");
         c2.setBrand("Lamborgini");
         c2.setDrive("Yes");
         c2.setBrake("NO");
@@ -25,7 +31,7 @@ public class Main {
         c2.amountOfRepetitions = 2;
 
 
-        Car c3 = new Car(17,"Opel","ABCD1234!");
+        Car c3 = new Car(e1,"Opel", "PR4701");
 
 
 
