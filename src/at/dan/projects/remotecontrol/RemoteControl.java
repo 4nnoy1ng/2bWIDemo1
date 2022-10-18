@@ -3,6 +3,18 @@ package at.dan.projects.remotecontrol;
 public class RemoteControl {
     private int battery1;
     private int battery2;
+    private boolean bON;
+
+
+
+    public boolean isbON() {
+        return bON;
+    }
+
+    public void setbON(boolean bON) {
+        bON = true;
+        this.bON = bON;
+    }
 
     public int getBattery1() {
         return battery1;
