@@ -7,13 +7,9 @@ public class Manufacturer {
     private double manufacturerDiscount;
 
     public Manufacturer(String mn, String mC, double mD){
-
-    }
-
-    public void getPrice() {
-        this.basePrice = 200000;
-        this.manufacturerDiscount = 3.0;
-        System.out.println((this.basePrice/this.manufacturerDiscount)*100);
+        this.manufacturername = mn;
+        this.manufacturerCountry = mC;
+        this.manufacturerDiscount = mD;
     }
 
     public int getBasePrice() {

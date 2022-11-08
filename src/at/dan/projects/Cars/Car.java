@@ -1,12 +1,11 @@
 package at.dan.projects.Cars;
 
-import at.dan.oo.Engine;
-
 public class Car {
     private String color;
     private int maximumSpeed;
     private int basePrice;
     private int baseConsumption;
+    private double manufacturerDiscount;
 
     public Car(String c, int mS, int bP, int bC) {
         this.color = c;
@@ -15,6 +14,13 @@ public class Car {
         this.baseConsumption = bC;
     }
 
+    public void Price(){
+        this.basePrice = 200000;
+        this.manufacturerDiscount = 3.0;
+        double discountprice = (this.basePrice/this.manufacturerDiscount);
+        double endprice = this.basePrice - discountprice;
+        System.out.println("Das Auto kostet " + endprice + "€");
+    }
 
     public String getColor() {
         return color;
