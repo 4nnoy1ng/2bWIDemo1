@@ -1,6 +1,7 @@
 package at.dan.projects.Cars;
 
 public class Car {
+    private int range;
     private String color;
     private int maximumSpeed;
     private int basePrice;
@@ -17,6 +18,15 @@ public class Car {
     public void Price(){
         this.basePrice = 200000;
         this.manufacturerDiscount = 3.0;
+        this.baseConsumption = 7;
+        this.range = 18000;
+        if (this.range < 50000) {
+            System.out.println(this.baseConsumption);
+        } else if (this.range >= 50000){
+            System.out.println(this.baseConsumption * 9.8);
+        }
+
+
         double discountprice = (this.basePrice/this.manufacturerDiscount);
         double endprice = this.basePrice - discountprice;
         System.out.println("Das Auto kostet " + endprice + "€");
