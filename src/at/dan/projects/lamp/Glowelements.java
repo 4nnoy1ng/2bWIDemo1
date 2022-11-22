@@ -1,5 +1,7 @@
 package at.dan.projects.lamp;
 
+import java.util.ArrayList;
+
 public class Glowelements {
     private String name;
     private String color;

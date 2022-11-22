@@ -9,5 +9,7 @@ public class Main {
         Lamp l1 = new Lamp(4);
         Glowelements Ge1 = new Glowelements("Eins","Weiß",0,false);
         Ge1.turnON();
+        
+
     }
 }
