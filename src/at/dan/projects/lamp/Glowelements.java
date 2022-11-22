@@ -1,18 +1,21 @@
 package at.dan.projects.lamp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Glowelements {
     private String name;
     private String color;
     private double powerConsumption;
     private int status;
+    private List<Lamp> lamps;
 
     public Glowelements(String name, String color, double powerConsumption, boolean status) {
         this.name = name;
         this.color = color;
         this.powerConsumption = powerConsumption;
         this.status = 1;
+        this.lamps = new ArrayList<>();
     }
 
     public void turnON() {
@@ -56,6 +59,14 @@ public class Glowelements {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public List<Lamp> getLamps() {
+        return lamps;
+    }
+
+    public void setLamps(List<Lamp> lamps) {
+        this.lamps = lamps;
     }
 }
 
