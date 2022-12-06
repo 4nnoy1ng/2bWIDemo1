@@ -69,4 +69,3 @@ public class Glowelements {
         this.lamps = lamps;
     }
 }
-

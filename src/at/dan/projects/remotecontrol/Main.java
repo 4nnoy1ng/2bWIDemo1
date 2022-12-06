@@ -9,14 +9,5 @@ public class Main {
         b1.getStatus();
         b1.turnON();
         b1.turnOFF();
-
-
-
-
-
-
-
-
-
     }
 }
