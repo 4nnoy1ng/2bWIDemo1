@@ -1,5 +1,6 @@
 package at.dan.projects.lamp;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,26 +8,28 @@ public class Glowelements {
     private String name;
     private String color;
     private double powerConsumption;
-    private int status;
-    private List<Lamp> lamps;
+    private boolean isOn;
 
-    public Glowelements(String name, String color, double powerConsumption, boolean status) {
+    public Glowelements(String name, String color) {
         this.name = name;
         this.color = color;
-        this.powerConsumption = powerConsumption;
-        this.status = 1;
-        this.lamps = new ArrayList<>();
+        this.isOn=false;
+        this.powerConsumption=0.0;
     }
 
-    public void turnON() {
-        int On = 1;
-        int Off = 0;
-        this.powerConsumption = 0;
-        if (Off == status) {
+    public void turnOn() {
+        if (!isOn) {
             this.powerConsumption = this.powerConsumption + 5;
+            this.isOn = true;
+            System.out.println("Mein Name ist " + this.name + "." + " " + this.isOn);
         } else {
-            System.out.println("Mein Name ist " + name + ". Ich bin bereits eingeschaltet");
+            System.out.println("Bin schon an");
         }
+
+    }
+
+    public void turnOff(){
+        this.isOn = false;
     }
 
     public String getName() {
@@ -53,19 +56,9 @@ public class Glowelements {
         this.powerConsumption = powerConsumption;
     }
 
-    public int getStatus() {
-        return status;
+    public boolean isOn() {
+        return isOn;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
-    public List<Lamp> getLamps() {
-        return lamps;
-    }
-
-    public void setLamps(List<Lamp> lamps) {
-        this.lamps = lamps;
-    }
 }
