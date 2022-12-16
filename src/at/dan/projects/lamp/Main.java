@@ -13,14 +13,15 @@ public class Main {
         Glowelements ge4 = new Glowelements("Vier","Rot");
         Glowelements ge5 = new Glowelements("Fünf","Orange");
 
-        ge1.turnOn();
-        ge2.turnOn();
-        ge2.turnOff();
-        ge2.turnOn();
         l1.addLightElement(ge1);
         l1.addLightElement(ge2);
 
+        ge1.turnOn();
+        ge2.turnOn();
+        ge2.turnOff();
+
         System.out.println(l1.getOverallPowerUsage());
+        System.out.println(l1.printNamesOfLightElemets());
 
     }
 }
