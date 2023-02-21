@@ -1,2 +1,4 @@
-package at.dan.oo.projects.accounts;public class CreditAccount {
+package at.dan.oo.projects.accounts;
+
+public class CreditAccount {
 }
