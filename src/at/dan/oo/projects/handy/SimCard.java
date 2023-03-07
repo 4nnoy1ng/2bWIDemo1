@@ -16,6 +16,10 @@ public class SimCard {
     public int getPhoneNumber() {
         return phoneNumber;
     }
+
+    public void doCall(String number) {
+        System.out.println("Call incoming"+ " " + number);
+    }
 }
 
 

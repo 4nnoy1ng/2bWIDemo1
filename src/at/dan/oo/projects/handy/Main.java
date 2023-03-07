@@ -7,7 +7,16 @@ public class Main {
         Camera cam = new Camera();
 
         Phone phone = new Phone(sim, cam, card);
-        phone.doCall("123123");
+        phone.doCall("+43 0681 20562270");
+
+        phone.takePicture();
+        phone.takePicture();
+
+        phone.printAllFiles();
+
+        System.out.println(phone.getFreeSpace());
+        phone.takePicture();
+        System.out.println(phone.getFreeSpace());
     }
 }
 
